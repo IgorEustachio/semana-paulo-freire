@@ -7,9 +7,10 @@
 
 :root {
   --cor1: #ffffff;
-  --cor2: #b3b3b3;
-  --cor3: #2b2b2b;
-  --cor4: #000000;
+  --cor2:  #2e8bd8;
+  --cor3:  #1B2A38;
+  --cor4: #0f0f0f;
+  --cor5: rgb(212, 212, 212);
 }
 
 body {
@@ -24,15 +25,18 @@ body {
 }
 
 header .navbar-text {
-  color: var(--cor3);
+  color: var(--cor1);
 }
 
 header .nav-link {
-  color: var(--cor3);
+  color: var(--cor1);
+  border-radius: 11px;
 }
 
 header .nav-link:hover {
-  color: var(--cor2);
+  color: var(--cor5);
+  background-color: var(--cor2);
+  border-radius: 11px;
 }
 
 #cf1 {
@@ -50,7 +54,7 @@ header .nav-link:hover {
 #cf1 h1 {
   font-size: 5em;
   text-align: center;
-  color: var(--cor3);
+  color: var(--cor1);
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 650;
@@ -60,7 +64,7 @@ header .nav-link:hover {
 #cf1 h2 {
   font-size: 3.5em;
   text-align: center;
-  color: var(--cor3);
+  color: var(--cor1);
 }
 
 #carouselExampleCaptions,
@@ -112,21 +116,17 @@ main #text {
   margin-top: 26px;
 }
 
-main #text h2 {
-  color: var(--cor3);
-}
 
 main #text p {
   text-indent: 30px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main #text a {
-  background-color: var(--cor2);
   border-radius: 11px;
   color: var(--cor3);
-  padding: 5px;
+  padding: 3px;
   font-weight: 950px;
 }
 
@@ -137,13 +137,31 @@ main #text img {
   border-radius: 11px;
 }
 
+main #text1 {
+  width: 65%;
+  margin: auto;
+  padding: 8px;
+}
+
+main #text1 p {
+  text-indent: 30px;
+  font-size: 1.3em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 main .biografia {
   background-color: var(--cor2);
   padding: 15px;
+  
 }
 
-main .biografia h2, p {
+main .biografia p {
   margin: 0;
+  color: var(--cor1);
+}
+
+main .biografia h2 {
+  color: var(--cor1);
 }
 
 table {
@@ -166,7 +184,6 @@ td {
 
 table td:hover {
   transform: scale(1.05);
-  transition: background-color 0.4s linear 0.01s;
   background-color: rgb(206, 122, 218);
   border-radius: 11px;
 }
@@ -197,8 +214,8 @@ table .abertura {
 }
 
 footer {
-  background: #222;
-  color: #fff;
+  background: var(--cor3);
+  color: var(--cor1);
   padding: 40px 0;
   font-family: Arial, sans-serif;
 }
@@ -230,19 +247,18 @@ footer {
 }
 
 .footer-col ul li a {
-  color: #bbb;
+  color: var(--cor1);
   text-decoration: none;
   transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
-  color: #fff;
+  color: var(--cor5);
 }
 
 .album-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
-  gap: 20px;
   padding: 20px;
 }
 
@@ -256,7 +272,7 @@ footer {
 }
 
 .album:hover {
-  transform: scale(0.95);
+  transform: scale(0.83);
 }
 
 .album img {
@@ -270,36 +286,53 @@ footer {
   margin-top: 15px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  color: var(--cor4);
+  color: var(--cor1);
 }
 
 .album p {
-  font-size: 0.9rem;
-  color: var(--cor4);
+  font-size: 0.9em;
+  color: var(--cor1);
   margin-top: 5px;
 }
 
 .card.card-body {
-  background-color: #f9dfe9;
-  color: #5a2d43;
-  border: 2px solid #d68aa8;
+  background-color: var(--cor2);
+  color: var(--cor1);
+  border: 2px solid var(--cor3);
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .btn.btn-primary {
-  background-color: #7ae299;
-  border-color: #d68aa8;
-  color: white;
+  background-color: var(--cor3);
+  border-color: var(--cor2);
+  color: var(--cor1);
 }
 
 .btn.btn-primary:hover {
-  background-color: #b76c90;
-  border-color: #b76c90;
+  background-color: var(--cor2);
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
+  header .navbar-text {
+  font-size: 0.8em;
+}
+
+header .nav-link {
+  font-size: 0.75em;
+}
+
+  main #text p {
+    font-size: 0.9em;
+  }
+
+  main #text1 p {
+    font-size: 0.9em;
+  }
+
+
   .row-footer {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -320,9 +353,7 @@ footer {
     text-align: center;
     color: var(--cor1);
   }
-}
 
-@media (max-width: 600px) {
   .row-footer {
     grid-template-columns: 1fr;
     text-align: center;
